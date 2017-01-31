@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="center" id="title">Survey Form</h1>
+    </header>
+    <main>
+
+
+        <section class="ss-style-triangles">
+            <div class="text">
+                <div class="container ">
+                    <div class="row center">
+                        <p id="description" class="center">Here is my form</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="form container stu-form">
+            <form action="index.html" method="post">
+                <legend class="left">personal info</legend>
+                <div class="row">
+                    <label for="first-name" id="name-label" class="col-6">name:</label>
+                    <input type="text" id="name" name "first_name" tabindex="1" required placeholder="first name*">
+
+                    <label for="email" id="email-label" class="col-6">email:</label>
+                    <input type="email" name="email" id="email" tabindex="3" placeholder="email@mail.com*" required>
+                </div>
+
+                <div class="center age">
+                    <label for="age" id="number-label">age:</label>
+                    <input type="number" name="age" id="number" min="1" max="125" class="input-field" tabindex="4" placeholder="0" required>
+                </div>
+
+                <div class="center">
+                    <legend class=""><span class="number">about you</legend>
+                          <label for="dropdown">Gender</label>
+                          <select id="selcet" name="gender" class="dropdown">
+                            <option value="">Select an option</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="other">Other</option>
+                          </select>
+                    </div>
+                    <div class="center buttons">
+                      <label>Employed<input name="rating" value="1" type="radio" class="userRatings"></label>
+                      <label>Unemployed<input name="rating" value="1" type="radio" class="userRatings"></label>
+                    </div>
+                    <div class="buttons center">
+                      <input type="checkbox" name="vehicle" value="Bike" checked> I have a bike<br>
+                      <input type="checkbox" name="vehicle" value="Car" > I have a car<br>
+
+                    </div>
+                    <div class="center">
+                      <textarea name="name" rows="10"  class="center" style="margin-top: 1em;" id="text-area"></textarea>
+                    </div>
+
+                  <div class="buttons center">
+                    <button class="btn" type="submit">Submit</button>
+                    <button class="btn " type="reset">Reset</button>
+                  </div>
+              </form>
+        </div>
+    </main>
+
+    <script src="https://gitcdn.link/repo/no-stack-dub-sack/testable-projects-fcc/master/build/bundle.js">
+    </script>
+</body>
+
+</html>

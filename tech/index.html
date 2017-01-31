@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Technical Documention</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+
+
+    <!--
+        4. Each <section> element with the class of "main-section" should also have an id that corresponds with the text of each <header> contained within it. Any spaces should be replaced with underscores (e.g. The <section> that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java"). ‣
+        5. The .main-section elements should contain at least 10 <p> elements total (not each). ‣
+        6. The .main-section elements should contain at least 5 <code> elements total (not each). ‣
+        7. The .main-section elements should contain at least 5 <li> items total (not each). ‣
+        8. I can see a <nav> element with a corresponding id="navbar". ‣
+        9. The first element within the navbar should be a <header> which contains text that describes the topic of the technical documentation. ‣
+        10. Additionally, the navbar should contain link (<a>) elements with the class of "nav-link". There should be one for every element with the class "main-section". ‣
+        11. Each element with the class of "nav-link" should contain text that corresponds to the <header> text within each <section> (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world"). ‣
+        12. When I click on a navbar element, the page should navigate to the corresponding section of the "main-doc" element (e.g. If I click on a "nav-link" element that contains the text "Hello world", the page navigates to a <section> element that has that id and contains the corresponding <header>. ‣
+        #Layout
+        1. On regular sized devices (laptops, desktops), the element with id="navbar" should be shown on the left side of the screen and should always be visible to the user. ‣
+        2. My Technical Documentation page should use at least one media query. -->
+
+
+
+
+
+
+<!-- NAV SECTION -->
+        <nav id="navbar">
+            <header class="center">Navigation</header>
+
+            <ul>
+                <li><a href="#First_Section" class="nav-link">First Section</a></li>
+                <li><a href="#Second_Section" class="nav-link">Second Section</a></li>
+                <li><a href="#Third_Section" class="nav-link">Third Section</a></li>
+                <li><a href="#Fourth_Section" class="nav-link">Fourth Section</a></li>
+                <li><a href="#Fifth_Section" class="nav-link">Fifth Section</a></li>
+            </ul>
+        </nav>
+
+    <!-- MAIN SECTION -->
+    <main id="main-doc">
+        <div class="technical-data">
+            <h1 class="center">Technical Data</h1>
+            <section class="main-section" id="First_Section">
+                <header>First Section</header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <pre>
+                  <code id="content">
+document.body.innerHTML = "Oops!" // dont run this in the console!
+                </code>
+              </pre>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </section>
+
+            <section class="main-section" id="Second_Section">
+                <header>Second Section</header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <pre>
+                  <code id="content">
+if (a >= 5) {
+  var a = 5;
+}
+console.log(x);  // 5
+                </code>
+              </pre>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </section>
+
+            <section class="main-section" id="Third_Section">
+                <header>Third Section</header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <pre>
+                  <code id="content">
+var a = function(b) {
+  if(b === 2){
+    return true;
+  } else {
+    return false;
+  }
+}
+b = 3; // false
+                </code>
+              </pre>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            </section>
+
+            <section class="main-section" id="Fourth_Section">
+                <header>Fourth Section</header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <ul>
+                  <li>I am the first list item</li>
+                  <li>I am the second list item</li>
+                </ul>
+
+                <pre>
+                  <code id="content">
+if (true) {
+  var c = 15;
+}
+console.log(c);  // 15
+                </code>
+              </pre>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <ul>
+                  <li>I am the first list item</li>
+                  <li>I am the second list item</li>
+                </ul>
+            </section>
+
+            <section class="main-section" id="Fifth_Section">
+                <header>Fifth Section</header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <pre>
+                  <code id="content">
+function myFunction(name){
+  return name;
+}
+
+myFunction("name")  // name</code>
+              </pre>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <ul>
+                  <li>I am a lonely list item</li>
+                </ul>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="https://gitcdn.link/repo/no-stack-dub-sack/testable-projects-fcc/master/build/bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+@import "vendor/_simple-grid.scss";
+@import "typogrophy/_fonts.scss";
+
+body {
+    background-color: #2DCB89;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+}
+
+header {
+    background-color: #26C281;
+    font-size: 2em;
+    font-family: 'Raleway', sans-serif;
+    padding: 0.5em;
+    font-weight: lighter;
+    letter-spacing: 0.189em;
+}
+
+header h1 {
+    z-index: 1;
+}
+
+p {
+    font-size: 2em;
+}
+
+.age {
+    margin-top: 20px;
+}
+
+.buttons {
+    margin-top: 1em;
+}
+
+#description{
+  padding-top: 1em;
+}
+
+::-webkit-input-placeholder {
+    color: #197E54;
+    letter-spacing: 0.1em;
+}
+
+:-moz-placeholder {
+    color: #26C281;
+    letter-spacing: 0.1em;
+}
+
+::-moz-placeholder {
+    color: #26C281;
+    letter-spacing: 0.1em;
+}
+
+:-ms-input-placeholder {
+    color: #26C281;
+    letter-spacing: 0.1em;
+}
+
+.stu-form {
+    width: 90%;
+    margin: 0.1em auto 0;
+    font-size: 2.5em;
+    line-height: 1.75;
+    letter-spacing: 0.1em;
+}
+
+button,
+input,
+select {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    display: inline-block;
+    padding: 0.1em;
+    margin: 0.2em;
+    max-width: 90%;
+    line-height: inherit;
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    border-bottom: 2px solid #26C281;
+    letter-spacing: 0.1em;
+}
+
+input:focus {
+    outline: none;
+    border-color: white;
+}
+
+section::after,
+section::before {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+#text-area {
+  width: calc(100% - 45px);
+}
+/* Triangles */
+.ss-style-triangles::after,
+.ss-style-triangles::before {
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.ss-style-triangles::before {
+    top: 80px;
+    background: #26C281;
+    z-index:-1;
+}
+
+.ss-style-triangles::after {
+    bottom: -50px;
+    z-index: 10;
+    background: inherit;
+}
