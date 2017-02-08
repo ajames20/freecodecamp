@@ -20,7 +20,12 @@
             city.innerHTML = '<h2>' + `${data.location.city}` + '</h2>';
             temp.innerHTML = '<h3>' + `${data.current_observation.dewpoint_c}` + "<span>C</span>" + '</h3>';
             description.innerHTML = "<h4>condition: " + '<span>' + `${data.current_observation.icon}` + '</span>' + "</h4>";
-            icon.innerHTML = "<img src=" + `${data.current_observation.icon_url}` + ">";
+
+            let linkIconRef = `${data.current_observation.icon}`.toString(),
+                gifLink = "https://icons.wxug.com/i/c/j/" + linkIconRef + ".gif";
+            icon.innerHTML = "<img src=" + gifLink + ">";
+            console.log(gifLink);
+
 
 
 

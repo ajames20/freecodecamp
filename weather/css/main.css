@@ -1,58 +1,45 @@
 body {
-    background-color: #f0f0f0;
-}
-
-body a {
-    text-decoration: none;
-}
+  background-color: #fff; }
+  body a {
+    text-decoration: none; }
 
 header {
-    text-align: center;
-    /* MEDIA QUERY */
-}
-
-header h1 {
+  text-align: center;
+  /* MEDIA QUERY */ }
+  header h1 {
     letter-spacing: 0.2em;
     margin-top: 1em;
     margin-bottom: 1em;
     opacity: 0.7;
-    text-transform: uppercase;
-}
+    text-transform: uppercase; }
 
 main {
-    text-align: center;
-}
-
-main a, main h2, main h3 {
-    letter-spacing: 0.2em;
-}
+  text-align: center; }
+  main a,
+  main h2,
+  main h3 {
+    letter-spacing: 0.2em; }
 
 @media (min-width: 990px) {
-    .weather-container {
-        justify-content: space-around;
-        flex-direction: row;
-    }
-}
+  .weather-container {
+    justify-content: space-around;
+    flex-direction: row; } }
 
 #description span, #temp span {
-    color: #1EAEDB;
-}
+  color: #1EAEDB; }
 
 #temp {
-    cursor: pointer;
-}
+  cursor: pointer; }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    /* MEDIA QUERY */
-}
-
-@media (min-width: 990px) {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  /* MEDIA QUERY */ }
+  @media (min-width: 990px) {
     footer p {
-        text-align: right;
-        margin-right: 5em;
-    }
-}
+      text-align: right;
+      margin-right: 5em; } }
+
+/*# sourceMappingURL=main.css.map */
