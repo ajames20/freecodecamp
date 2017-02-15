@@ -47,7 +47,7 @@
         }).then(function(resp) {
             return resp.json();
         }).then(function(data) {
-            console.log(data);
+
             var output = document.getElementById('output');
             output.innerHTML = '';
             for (var i = 0; i < data[1].length; i++) {
