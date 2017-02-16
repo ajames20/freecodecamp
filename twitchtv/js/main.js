@@ -33,7 +33,7 @@
                     game = data.stream.game;
 
 
-                online.innerHTML += '<div class="content user-online-status">' + '<h2>' + userName + '</h2>' + '<p>' + game + '</p>' + '<a href="' + channelLink + '" target="_blank">' + channelLink + '</a>' + '<img src="' + profilePicture + '">';
+                online.innerHTML += '<div class="content user-online-status ">' + '<h2>' + userName + '</h2>' + '<p>' + game + '</p>' + '<a href="' + channelLink + '" target="_blank">' + channelLink + '</a>' + '<img src="' + profilePicture + '">';
 
             } else if (data.stream === null) {
                 var offChannel = data._links.channel,
@@ -66,9 +66,9 @@
                         profilePicture = 'https://lh3.googleusercontent.com/Ti7DQ5NH92V-_uuOiTbMOMwAjVXzl2rubjygxQp3KGutzuRHnjYvpCtfWJybeDYh4g=w300';
                     }
                     if (data.status === 404 || data.error === "Not Found") {
-                        offline.innerHTML = '<div class="content no-user">' + '<h2>' + data.error + '</h2>' + '<p>' + data.message + '</p>' + '<a href="https://twitch.tv" target="_blank"> https://twitch.tv</a>' + '<img src="' + profilePicture + '">';
+                        offline.innerHTML = '<div class="content no-user ">' + '<h2>' + data.error + '</h2>' + '<p>' + data.message + '</p>' + '<a href="https://twitch.tv" target="_blank"> https://twitch.tv</a>' + '<img src="' + profilePicture + '">';
                     } else {
-                        offline.innerHTML += '<div class="content user-offline-status">' + '<h2>' + userName + '</h2>' + '<p>' + game + '</p>' + '<a href="' + channelLink + '" target="_blank">' + channelLink + '</a>' + '<img src="' + profilePicture + '">';
+                        offline.innerHTML += '<div class="content user-offline-status ">' + '<h2>' + userName + '</h2>' + '<p>' + game + '</p>' + '<a href="' + channelLink + '" target="_blank">' + channelLink + '</a>' + '<img src="' + profilePicture + '">';
                     }
 
                 }).catch(function(error) {

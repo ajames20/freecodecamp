@@ -108,15 +108,17 @@ main {
 .content {
     border: 1px solid #6441A4;
     border-radius: 5px;
-    margin: 0.5em 0;
-    padding: 1em;
+    margin: 0.5em 0.5em 0.5em 1em;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     img {
         width: 3em;
         float: right;
         border-radius: 50%;
-        margin-top: -6em;
-        margin-right: 2em;
+        margin: 0 auto;
     }
 
     hr {
@@ -132,6 +134,8 @@ main {
         border-radius: 5px;
         margin: 0.5em 0;
         padding: 1em;
+        flex-direction: column;
+        align-items: flex-start;
 
         a {
             font-size: 1.1em;
@@ -152,7 +156,7 @@ main {
 }
 
 .online {
-    border: 1px solid #00FF00;
+    border: 1px solid #6441A4;
     background-color: rgba(0, 255, 128, 0.1);
 }
 
@@ -165,7 +169,7 @@ main {
 }
 
 .offline {
-    border: 1px solid red;
+    border: 1px solid #6441A4;
     background-color: rgba(255, 51, 51, 0.2);
 
     img {
