@@ -107,7 +107,6 @@
             elem2 = document.querySelectorAll('.no-user'),
             elem3 = document.querySelectorAll('.user-offline-status');
 
-        console.log(elem);
         for (var i = 0; i < elem.length; i++) {
             elem[i].classList.add('online');
             elem[i].classList.remove('hidden');
