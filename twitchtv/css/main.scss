@@ -126,8 +126,18 @@ main {
         margin-bottom: 0.5em;
     }
 
+    h2 {
+        margin-bottom: 0;
+    }
+
     a {
         font-size: 0.8em;
+        margin-bottom: 0.4em;
+        padding: 0.5em 0 1em;
+    }
+
+    p {
+        margin-bottom: 0.4em;
     }
     @media (min-width: $break-large) {
         border: 1px solid #6441A4;
@@ -136,6 +146,12 @@ main {
         padding: 1em;
         flex-direction: column;
         align-items: flex-start;
+
+        a,
+        h2,
+        p {
+            margin-bottom: 0.8em;
+        }
 
         a {
             font-size: 1.1em;

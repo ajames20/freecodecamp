@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>FreeCodeCamp Calculator</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <p>developed by
+            <a href="https://www.github.com/ajames20" target="_blank">andrewJames</a>
+        </p>
+        <div class="iphone"></div>
+        <div class="circle"></div>
+        <div class="camera"></div>
+        <div class="speaker"></div>
+        <div class="screen">
+            <div id="display-area">
+                <div class="top-area">
+                    <img id="status-icon" src="images/statusBarSignal.svg">
+                    <img id="wifi-icon" src="images/statusBarWifi.svg">
+                    <span id="clock"></span>
+                    <img id="battery-icon" src="images/statusBarBattery.svg">
+                </div>
+
+                <div id="display">
+                    <span id="calculator-output"></span>
+                </div>
+
+                <div class="btn-line">
+                    <div class="calc-btn calc-btn-top" id="clear">AC</div>
+                    <div class="calc-btn calc-btn-top" id="negative">+/-</div>
+                    <div class="calc-btn calc-btn-top" id="percent">%</div>
+                    <div class="calc-btn calc-btn-right">&divide;</div>
+                </div>
+                <div class="btn-line">
+                    <div class="calc-btn calc-btn-numbers">7</div>
+                    <div class="calc-btn calc-btn-numbers">8</div>
+                    <div class="calc-btn calc-btn-numbers">9</div>
+                    <div class="calc-btn calc-btn-right">x</div>
+                </div>
+                <div class="btn-line ">
+                    <div class="calc-btn calc-btn-numbers">4</div>
+                    <div class="calc-btn calc-btn-numbers">5</div>
+                    <div class="calc-btn calc-btn-numbers">6</div>
+                    <div class="calc-btn calc-btn-right">-</div>
+                </div>
+                <div class="btn-line ">
+                    <div class="calc-btn calc-btn-numbers">1</div>
+                    <div class="calc-btn calc-btn-numbers">2</div>
+                    <div class="calc-btn calc-btn-numbers">3</div>
+                    <div class="calc-btn calc-btn-right operator" id="addition">+</div>
+                </div>
+                <div class="btn-line ">
+                    <div class="calc-btn zero calc-btn-bottom calc-btn-numbers">0</div>
+                    <div class="calc-btn calc-btn-bottom" id="decimal">.</div>
+                    <div class="calc-btn calc-btn-right calc-btn-bottom">=</div>
+                </div>
+            </div>
+        </div>
+        <div class="home-button"></div>
+        <script src="main.js "></script>
+
+</body>
+
+</html>

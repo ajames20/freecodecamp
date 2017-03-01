@@ -20,6 +20,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    /* MEDIA QUERY */
 }
 
 body a {
@@ -130,8 +131,18 @@ main h5 {
     margin-bottom: 0.5em;
 }
 
+.content h2 {
+    margin-bottom: 0;
+}
+
 .content a {
     font-size: 0.8em;
+    margin-bottom: 0.4em;
+    padding: 0.5em 0 1em;
+}
+
+.content p {
+    margin-bottom: 0.4em;
 }
 @media (min-width: 990px) {
     .content {
@@ -141,6 +152,12 @@ main h5 {
         padding: 1em;
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .content a,
+    .content h2,
+    .content p {
+        margin-bottom: 0.8em;
     }
 
     .content a {

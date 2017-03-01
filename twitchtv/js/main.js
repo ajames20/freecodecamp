@@ -25,13 +25,13 @@
         }).then(function(resp) {
             return resp.json();
         }).then(function(data) {
+            console.log(data);
             if (data.stream !== null && data.stream !== undefined) {
 
                 var profilePicture = data.stream.channel.logo,
-                    channelLink = data._links.channel,
+                    channelLink = data.stream.channel.url,
                     userName = data.stream.channel.name,
                     game = data.stream.game;
-
 
                 online.innerHTML += '<div class="content user-online-status ">' + '<h2>' + userName + '</h2>' + '<p>' + game + '</p>' + '<a href="' + channelLink + '" target="_blank">' + channelLink + '</a>' + '<img src="' + profilePicture + '">';
 
@@ -136,4 +136,4 @@
         }
     });
 
-})();;
+})();
