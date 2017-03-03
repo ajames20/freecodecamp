@@ -33,7 +33,6 @@
         keys[i].onclick = function(e) {
             var btnVal = this.textContent;
 
-
             // cahnges the state fo the clear button from AC to C when Number is clicked
             if (clearBtn.textContent == state1) {
                 clearBtn.textContent = state2;
@@ -42,7 +41,7 @@
             //if button textContent is !isNaN the number will print to screen
             if (!isNaN(btnVal) || btnVal === '.') {
                 temp += btnVal;
-                output.textContent = temp.substring(0, 9);
+                output.textContent = temp.substring(0, 9).replace(/(\d)(?=(\d{3})+$)/g, '$1,');
             } else if (btnVal === 'AC') {
                 output.classList.remove('medium', 'small', 'smallest');
                 entries = [];
@@ -69,15 +68,11 @@
             } else if (btnVal === '+/-') {
                 output.textContent = '-' + temp;
                 temp = output.textContent;
-
-
             } else if (btnVal === '%') {
                 output.textContent = temp / 100;
                 temp = output.textContent;
-
             } else if (btnVal === '=') {
                 entries.push(temp);
-
                 var displayOutput = Number(entries[0]);
                 for (var i = 1; i < entries.length; i++) {
                     var nextNum = Number(entries[i + 1]);
@@ -86,27 +81,44 @@
 
                     if (symbol === '+') {
                         displayOutput += nextNum;
+                        if (displayOutput > 999999999) {
+                            displayOutput.toExponential(0).replace(/[+]/g, '');
+                        }
+                        displayOutput = (displayOutput + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+
                     } else if (symbol === '-') {
                         displayOutput -= nextNum;
+                        if (displayOutput > 999999999) {
+                            displayOutput.toExponential(0).replace(/[+]/g, '');
+                        }
+                        displayOutput = (displayOutput + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+
                     } else if (symbol === '*') {
                         displayOutput *= nextNum;
+
+                        if (displayOutput > 999999999) {
+                            displayOutput = displayOutput.toExponential(0).replace(/[+]/g, '');
+                        }
+
+                        displayOutput = (displayOutput + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
                     } else if (symbol === '/') {
                         displayOutput /= nextNum;
+
+                        if (displayOutput > 999999999) {
+                            displayOutput = displayOutput.toExponential(0).replace(/[+]/g, '');
+                        }
+
+                        displayOutput = (displayOutput + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
                     }
+
                 }
 
-                // Swap the '-' symbol so text input handles it correctly
+                //Change '-' symbol so math is done correctly
                 if (displayOutput < 0) {
                     displayOutput = '-' + Math.abs(displayOutput);
                 }
-                screenLimit = temp.length;
 
-                if (screenLimit > 8) {
-                    output.textContent = displayOutput.toExponential(1);
-                } else {
-                    output.textContent = displayOutput;
-                }
-
+                output.textContent = displayOutput;
                 entries = [];
                 temp = '';
                 // Push number
@@ -116,21 +128,18 @@
                 temp = '';
             }
 
-
             limit = temp.length;
             if (limit <= 5 && !isNaN(btnVal)) {
                 output.classList.remove('medium', 'small', 'smallest');
             } else if (limit > 6) {
-                output.classList.add('medium');
+                output.classList.add('large');
                 if (limit > 7) {
-                    output.classList.add('small');
+                    output.classList.add('medium');
                     if (limit > 8) {
-                        output.classList.add('smallest');
+                        output.classList.add('small');
                     }
                 }
             }
-
-            // prevent page jumps
             e.preventDefault();
         };
     }

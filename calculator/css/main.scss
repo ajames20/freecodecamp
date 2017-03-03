@@ -14,7 +14,7 @@ input {
 
 body {
     background-color: #F2F2F2;
-    margin-top: 1em;
+    margin-top: 0.5em;
 }
 
 .container {
@@ -127,27 +127,23 @@ body {
     .calculator-output {
         font-family: 'Roboto', sans-serif;
         font-weight: 100;
-        font-size: 4.4em;
+        font-size: 4.2em;
         margin-left: 0.5em;
         padding-right: 0.1em;
         padding-bottom: 0.2em;
         line-height: 0.9;
     }
 
+    .large {
+        font-size: 3.5em;
+    }
+
     .medium {
-        font-size: 3.8em;
+        font-size: 3.1em;
     }
 
     .small {
-        font-size: 3.289em;
-    }
-
-    .smallest {
-        font-size: 2.989em;
-    }
-
-    .smallestest {
-        font-size: 2.6em;
+        font-size: 2.8em;
     }
 }
 
