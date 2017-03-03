@@ -1,11 +1,10 @@
 (function() {
     // Get all the keys from document
-    var keys = document.querySelectorAll('.calc-btn-numbers');
-    var output = document.getElementById('calculator-output');
-    var negative = document.getElementById('negative');
-    var percent = document.getElementById('percent');
+    var keys = document.querySelectorAll('.calc-btn');
+    var output = document.querySelector('.calculator-output');
     var clearBtn = document.getElementById('clear');
-    var item = [];
+    var entries = [];
+    var temp = '';
     var limit;
     var state1 = 'AC';
     var state2 = 'C';
@@ -32,53 +31,109 @@
 
     for (var i = 0; i < keys.length; i++) {
         keys[i].onclick = function(e) {
-            var btnVal = this.innerHTML;
+            var btnVal = this.textContent;
+
 
             // cahnges the state fo the clear button from AC to C when Number is clicked
-            if (clearBtn.innerHTML == state1) {
-                clearBtn.innerHTML = state2;
+            if (clearBtn.textContent == state1) {
+                clearBtn.textContent = state2;
             }
 
-            //replace the 0 with new values inputed
-            output.innerHTML = output.innerHTML.replace(0, '');
-            //updates HTML with clicked value
-            output.innerHTML += btnVal;
-            item.push(btnVal);
+            //if button textContent is !isNaN the number will print to screen
+            if (!isNaN(btnVal) || btnVal === '.') {
+                temp += btnVal;
+                output.textContent = temp.substring(0, 9);
+            } else if (btnVal === 'AC') {
+                output.classList.remove('medium', 'small', 'smallest');
+                entries = [];
+                temp = '';
+                output.textContent = '';
+                // Clear last entry
+            } else if (btnVal === 'C') {
+                output.classList.remove('medium', 'small', 'smallest');
+                entries = [];
+                temp = '';
+                if (clearBtn.innerHTML == state2) {
+                    clearBtn.innerHTML = state1;
+                    output.textContent = '';
+                }
+            } else if (btnVal === 'x') {
+                entries.push(temp);
+                entries.push('*');
+                temp = '';
+            } else if (btnVal === '÷') {
+                entries.push(temp);
+                entries.push('/');
+                temp = '';
+                // Got the equals sign, perform calculation
+            } else if (btnVal === '+/-') {
+                output.textContent = '-' + temp;
+                temp = output.textContent;
 
-            limit = item.length;
 
-            if (limit > 9) {
-                //limits the amount of charecters inputed and shows error memssage
-                output.innerHTML = '<p class="error">too many numbers</p>';
+            } else if (btnVal === '%') {
+                output.textContent = temp / 100;
+                temp = output.textContent;
+
+            } else if (btnVal === '=') {
+                entries.push(temp);
+
+                var displayOutput = Number(entries[0]);
+                for (var i = 1; i < entries.length; i++) {
+                    var nextNum = Number(entries[i + 1]);
+                    var symbol = entries[i];
+
+
+                    if (symbol === '+') {
+                        displayOutput += nextNum;
+                    } else if (symbol === '-') {
+                        displayOutput -= nextNum;
+                    } else if (symbol === '*') {
+                        displayOutput *= nextNum;
+                    } else if (symbol === '/') {
+                        displayOutput /= nextNum;
+                    }
+                }
+
+                // Swap the '-' symbol so text input handles it correctly
+                if (displayOutput < 0) {
+                    displayOutput = '-' + Math.abs(displayOutput);
+                }
+                screenLimit = temp.length;
+
+                if (screenLimit > 8) {
+                    output.textContent = displayOutput.toExponential(1);
+                } else {
+                    output.textContent = displayOutput;
+                }
+
+                entries = [];
+                temp = '';
+                // Push number
+            } else {
+                entries.push(temp);
+                entries.push(btnVal);
+                temp = '';
             }
+
+
+            limit = temp.length;
+            if (limit <= 5 && !isNaN(btnVal)) {
+                output.classList.remove('medium', 'small', 'smallest');
+            } else if (limit > 6) {
+                output.classList.add('medium');
+                if (limit > 7) {
+                    output.classList.add('small');
+                    if (limit > 8) {
+                        output.classList.add('smallest');
+                    }
+                }
+            }
+
             // prevent page jumps
             e.preventDefault();
         };
     }
 
-
-    clearBtn.addEventListener('click', function() {
-        resetScreen();
-    });
-
-    negative.addEventListener('click', function() {
-        //add a negative sign to output screen one time
-    });
-
-    percent.addEventListener('click', function() {
-        output.innerHTML = output.innerHTML / 100;
-    });
-
-    function initilizeScreen() {
-        output.textContent = '0';
-    }
-
-    function resetScreen() {
-        clearBtn.innerHTML = state1;
-        output.textContent = '0';
-        item = [];
-    }
-
     startTime();
-    initilizeScreen();
 })();
