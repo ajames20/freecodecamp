@@ -103,17 +103,17 @@ body {
   color: #fff;
   height: 6.6em; }
   #display .calculator-output {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Helvetica;
     font-weight: 100;
-    font-size: 4.2em;
+    font-size: 4em;
     margin-left: 0.5em;
     padding-right: 0.1em;
     padding-bottom: 0.2em;
     line-height: 0.9; }
   #display .large {
-    font-size: 3.5em; }
+    font-size: 3.4em; }
   #display .medium {
-    font-size: 3.1em; }
+    font-size: 3.0em; }
   #display .small {
     font-size: 2.8em; }
 

@@ -33,29 +33,27 @@
         keys[i].onclick = function(e) {
             var btnVal = this.textContent;
 
-            // cahnges the state fo the clear button from AC to C when Number is clicked
-            if (clearBtn.textContent == state1) {
-                clearBtn.textContent = state2;
-            }
 
             //if button textContent is !isNaN the number will print to screen
             if (!isNaN(btnVal) || btnVal === '.') {
                 temp += btnVal;
+                clearBtn.textContent = state2;
                 output.textContent = temp.substring(0, 9).replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+
             } else if (btnVal === 'AC') {
-                output.classList.remove('medium', 'small', 'smallest');
+                output.classList.remove('large', 'medium', 'small');
                 entries = [];
                 temp = '';
                 output.textContent = '';
                 // Clear last entry
             } else if (btnVal === 'C') {
-                output.classList.remove('medium', 'small', 'smallest');
+                output.classList.remove('large', 'medium', 'small');
                 entries = [];
                 temp = '';
-                if (clearBtn.innerHTML == state2) {
-                    clearBtn.innerHTML = state1;
-                    output.textContent = '';
-                }
+
+                clearBtn.innerHTML = state1;
+                output.textContent = '';
+
             } else if (btnVal === 'x') {
                 entries.push(temp);
                 entries.push('*');
@@ -81,33 +79,15 @@
 
                     if (symbol === '+') {
                         displayOutput += nextNum;
-                        if (displayOutput > 999999999) {
-                            displayOutput.toExponential(0).replace(/[+]/g, '');
-                        }
-                        displayOutput = (displayOutput + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
-
-                    } else if (symbol === '-') {
-                        displayOutput -= nextNum;
-                        if (displayOutput > 999999999) {
-                            displayOutput.toExponential(0).replace(/[+]/g, '');
-                        }
                         displayOutput = (displayOutput + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 
                     } else if (symbol === '*') {
                         displayOutput *= nextNum;
 
-                        if (displayOutput > 999999999) {
-                            displayOutput = displayOutput.toExponential(0).replace(/[+]/g, '');
-                        }
-
                         displayOutput = (displayOutput + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+
                     } else if (symbol === '/') {
                         displayOutput /= nextNum;
-
-                        if (displayOutput > 999999999) {
-                            displayOutput = displayOutput.toExponential(0).replace(/[+]/g, '');
-                        }
-
                         displayOutput = (displayOutput + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
                     }
 
@@ -117,8 +97,30 @@
                 if (displayOutput < 0) {
                     displayOutput = '-' + Math.abs(displayOutput);
                 }
+                // handle output to fit in screen when user hits = sign
+                if (displayOutput.length > 6) {
+                    output.classList.remove('large', 'medium', 'small');
+                    output.textContent = displayOutput;
 
-                output.textContent = displayOutput;
+                    if (displayOutput.length > 8) {
+                        output.classList.add('large');
+                        output.textContent = displayOutput;
+                    }
+                    if (displayOutput.length > 9) {
+                        output.classList.add('medium');
+                        output.textContent = displayOutput;
+                    }
+                    if (displayOutput.length >= 10) {
+                        output.classList.remove('large', 'medium', 'small');
+                        displayOutput = displayOutput.replace(/[, ]+/g, '');
+                        displayOutput = (Number(displayOutput).toExponential(0).replace(/[+]/g, ''));
+                        output.textContent = displayOutput;
+
+                    }
+                } else {
+                    output.textContent = displayOutput;
+                }
+
                 entries = [];
                 temp = '';
                 // Push number
@@ -130,7 +132,7 @@
 
             limit = temp.length;
             if (limit <= 5 && !isNaN(btnVal)) {
-                output.classList.remove('medium', 'small', 'smallest');
+                output.classList.remove('large', 'medium', 'small');
             } else if (limit > 6) {
                 output.classList.add('large');
                 if (limit > 7) {
