@@ -41,6 +41,18 @@ header {
     font-size: 2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+        opacity: 0.5;
+        padding: 0.3em;
+    }
+
+    a:hover {
+        opacity: 1;
+    }
 }
 
 .timer {
@@ -95,12 +107,13 @@ header {
     justify-content: center;
 }
 
-.end-time {
-    font-size: 3rem;
-    color: #fff;
-}
-
 .break-display {
     font-size: 4rem;
     color: #fff;
+}
+
+.end-time {
+    font-size: 3rem;
+    color: #fff;
+    margin-top: 0.5em;
 }

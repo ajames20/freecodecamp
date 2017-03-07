@@ -67,6 +67,7 @@
 
             if (secondsLeft < 0) {
                 clearInterval(countdown);
+                timerReset();
                 return;
             }
             displayBreakTimeLeft(secondsLeft);
@@ -100,11 +101,15 @@
     });
 
     resetTimer.addEventListener('click', function() {
+        timerReset();
+    });
+
+    function timerReset() {
         timer(1500);
         breakTimer(300);
         clearInterval(countdown);
         endTime.textContent = 'Your break will begin at: ';
-    });
+    }
 
     pomodoroControl.forEach(function(button) {
         let seconds;
