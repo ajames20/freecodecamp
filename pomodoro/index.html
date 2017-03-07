@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="timer">
+        <header>
+            <h1>Pomodoro Timer</h1>
+            <p>developed by <a href="https://www.github.com/ajames20" target="_blank">andrewJames</a></p>
+        </header>
+        <div class="display">
+            <h1 class="time-left">25:00</h1>
+            <p class="break-display">Break Length: <span id="break-time-display">05:00</p>
+            <p class="end-time">Your break will begin at: </p>
+        </div>
+        <div class="timer-controls">
+            <button class="timer-buttons timer-control break">-</button>
+            <button class="timer-buttons">Break</button>
+            <button class="timer-buttons timer-control break">+</button>
+            <button class="timer-buttons timer-control pomodoro">-</button>
+            <button class="timer-buttons">Timer</button>
+            <button class="timer-buttons timer-control pomodoro">+</button>
+        </div>
+        <div class="timer-controls">
+            <button class="timer-buttons timer-control start">Start</button>
+            <button class="timer-buttons timer-control reset">Reset</button>
+            <button class="timer-buttons timer-control pause">Pause</button>
+            <button class="timer-buttons timer-control resume">Resume</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+
+</html>
