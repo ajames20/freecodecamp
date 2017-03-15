@@ -8,7 +8,7 @@
         temp = document.getElementById('temp'),
         icon = document.getElementById('icon');
 
-    const url = "http://api.wunderground.com/api/b6ad6560d07587c6/geolookup/conditions/q/autoip.json";
+    const url = "https://api.wunderground.com/api/b6ad6560d07587c6/geolookup/conditions/q/autoip.json";
 
 
     fetch(url, {
