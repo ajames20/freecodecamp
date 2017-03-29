@@ -1,10 +1,10 @@
-@import url( 'https://fonts.googleapis.com/css?family=Open+Sans:300,400');
-@import url( 'https://fonts.googleapis.com/css?family=Roboto:100,300');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300");
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 button,
@@ -13,14 +13,14 @@ input {
 }
 
 body {
-    background-color: #F2F2F2;
     margin-top: 0.5em;
+    background-color: #f2f2f2;
 }
 
 .container {
+    font-family: 'Open Sans', sans-serif;
     width: 100%;
     height: 600px;
-    font-family: 'Open Sans', sans-serif;
 
     p {
         margin: 0.5em 0;
@@ -28,8 +28,8 @@ body {
     }
 
     a {
-        color: #F18F00;
         text-decoration: none;
+        color: #f18f00;
     }
 }
 
@@ -45,63 +45,63 @@ body {
 .iphone {
     width: 280px;
     height: 580px;
-    background: #f9f7f9;
-    border: 5px solid #C8C8C8;
-    border-radius: 32px;
     opacity: 0.8;
+    border: 5px solid #c8c8c8;
+    border-radius: 32px;
+    background: #f9f7f9;
 }
 
 .circle {
-    width: 11px;
-    height: 11px;
-    background: #C8C8C8;
-    border-radius: 50%;
     position: relative;
     top: -570px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #c8c8c8;
 }
 
 .camera {
-    width: 12px;
-    height: 12px;
-    background: #C8C8C8;
-    border-radius: 50%;
     position: relative;
     top: -566px;
     left: -48px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #c8c8c8;
 }
 
 .speaker {
-    width: 61px;
-    height: 6px;
-    background: #C8C8C8;
-    border-radius: 5px;
     position: relative;
     top: -575px;
+    width: 61px;
+    height: 6px;
+    border-radius: 5px;
+    background: #c8c8c8;
 }
 
 .screen {
+    position: relative;
+    top: -564px;
     width: 246px;
     border-top: 1px solid #000;
     border-right: 1px solid #000;
     border-left: 1px solid #000;
-    position: relative;
-    top: -564px;
 }
 
 .home-button {
+    position: relative;
+    z-index: 2;
+    top: -558px;
     width: 48px;
     height: 48px;
-    background: #C8C8C8;
     border-radius: 50%;
-    position: relative;
-    top: -558px;
-    z-index: 2;
+    background: #c8c8c8;
 }
 
 .top-area {
+    display: flex;
     padding: 0.2em;
     background-color: #000;
-    display: flex;
     justify-content: space-between;
 
     #wifi-icon {
@@ -110,28 +110,28 @@ body {
 
     span {
         font-size: 0.625em;
-        color: #fff;
         margin-left: -2.7em;
+        color: #fff;
     }
 }
 
 #display {
-    background-color: #000;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    height: 6.6em;
     text-align: right;
     color: #fff;
-    height: 6.6em;
+    background-color: #000;
+    justify-content: flex-end;
+    align-items: flex-end;
 
     .calculator-output {
         font-family: 'Roboto', Helvetica;
-        font-weight: 100;
         font-size: 4em;
+        font-weight: 100;
+        line-height: 0.9;
         margin-left: 0.5em;
         padding-right: 0.1em;
         padding-bottom: 0.2em;
-        line-height: 0.9;
     }
 
     .large {
@@ -148,20 +148,20 @@ body {
 }
 
 .btn-line {
-    margin: 0;
     display: flex;
+    margin: 0;
 
     .calc-btn {
-        height: 67px;
-        width: 61.2px;
-        text-align: center;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 61.2px;
+        height: 67px;
         padding-top: 8px;
+        text-align: center;
         border-right: 1px solid #000;
         border-bottom: 1px solid #000;
-        background-color: #F0F0F0;
+        background-color: #f0f0f0;
+        align-items: center;
+        justify-content: center;
     }
 
     .calc-btn:hover {
@@ -169,13 +169,13 @@ body {
     }
 
     .calc-btn-top {
-        background-color: #D8D8D8;
+        background-color: #d8d8d8;
     }
 
     .calc-btn-right {
         color: #fff;
-        background-color: #F18F00;
         border-right: 0;
+        background-color: #f18f00;
     }
 
     .zero {
@@ -183,7 +183,7 @@ body {
     }
 
     .calc-btn:hover {
-        background-color: #C8C8C8;
+        background-color: #c8c8c8;
     }
 
     .calc-btn-right:hover {
