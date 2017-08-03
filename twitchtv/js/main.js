@@ -1,7 +1,7 @@
 /* TWITCH TV*/
 "use strict";
 
-(function() {
+(function () {
     var loadError = document.getElementById('error'),
         main = document.getElementById('main-content'),
         online = document.getElementById('online-user'),
@@ -22,9 +22,9 @@
         fetch(url, {
             method: 'get'
 
-        }).then(function(resp) {
+        }).then(function (resp) {
             return resp.json();
-        }).then(function(data) {
+        }).then(function (data) {
             console.log(data);
             if (data.stream !== null && data.stream !== undefined) {
 
@@ -47,9 +47,9 @@
                 fetch(url, {
                     method: 'get'
 
-                }).then(function(resp) {
+                }).then(function (resp) {
                     return resp.json();
-                }).then(function(data) {
+                }).then(function (data) {
 
                     var profilePicture = data.logo,
                         channelLink = data.url,
@@ -71,13 +71,13 @@
                         offline.innerHTML += '<div class="content user-offline-status ">' + '<h2>' + userName + '</h2>' + '<p>' + game + '</p>' + '<a href="' + channelLink + '" target="_blank">' + channelLink + '</a>' + '<img src="' + profilePicture + '">';
                     }
 
-                }).catch(function(error) {
+                }).catch(function (error) {
                     // If there is any error you will catch them here
                     loadError.innerHTML = '<h2 class="error">There was a problem fiding what you were looking for!</h2>';
                 });
 
             }
-        }).catch(function(error) {
+        }).catch(function (error) {
             // If there is any error you will catch them here
             loadError.innerHTML = '<h2 class="error">There was a problem fiding what you were looking for!</h2>';
         });
@@ -85,7 +85,7 @@
 
 
 
-    allUsersButton.addEventListener('click', function() {
+    allUsersButton.addEventListener('click', function () {
         var elem = document.querySelectorAll('.content'),
             elem2 = document.querySelectorAll('.user-online-status'),
             elem3 = document.querySelectorAll('.user-offline-status');
@@ -102,7 +102,7 @@
 
     });
 
-    usersOnlineButton.addEventListener('click', function() {
+    usersOnlineButton.addEventListener('click', function () {
         var elem = document.querySelectorAll('.user-online-status'),
             elem2 = document.querySelectorAll('.no-user'),
             elem3 = document.querySelectorAll('.user-offline-status');
@@ -119,7 +119,7 @@
         }
     });
 
-    usersOfflineButton.addEventListener('click', function() {
+    usersOfflineButton.addEventListener('click', function () {
         var elem = document.querySelectorAll('.user-online-status'),
             elem2 = document.querySelectorAll('.no-user'),
             elem3 = document.querySelectorAll('.user-offline-status');
